@@ -10,6 +10,8 @@ int main() {
     float area1;           // A área da cidade em quilômetros quadrados. Tipo: float.
     float PIB1;            // O Produto Interno Bruto da cidade. Tipo: float.
     int pturisticos1;      // A quantidade de pontos turísticos na cidade. Tipo: int.
+    float dpopulacional1;   // A densidade populacional. Tipo: float
+    float PIBpercapita1;    // PIB per capita. Tipo: float
 
     // Variáveis da carta 2
     char estado2;          
@@ -18,7 +20,9 @@ int main() {
     int populacao2;        
     float area2;           
     float PIB2;            
-    int pturisticos2;      
+    int pturisticos2;     
+    float dpopulacional2;
+    float PIBpercapita2; 
 
     // Carta 1 - Coleta de dados
     printf("Dados da carta 1\n");                     
@@ -83,6 +87,13 @@ int main() {
     scanf("%d", &pturisticos2);                            // Coleta o input preenchido em pturisticos2.
     getchar();                                             // Consome a quebra de linha gerada pelo enter.
     
+    // Função para calcular densidade populacional
+    dpopulacional1 = populacao1 / area1; 
+    dpopulacional2 = populacao2 / area2;
+
+    // Função para calcular o PIB per capita
+    PIBpercapita1 = PIB1 / populacao1;
+    PIBpercapita2 = PIB2 / populacao2;
 
     // Printando carta 1
     printf("\n");                                          // Quebra de linha para separar visualmente o print completo da carta 1.
@@ -91,9 +102,11 @@ int main() {
     printf("Codigo: %c%s\n", estado1, codcarta1);
     printf("Nome da Cidade: %s\n", nomecidade1);
     printf("Populacao: %d\n", populacao1);
-    printf("Area: %.2f km2\n", area1);
+    printf("Area: %.2f km²\n", area1);
     printf("PIB: %.2f Bilhoes de Reais\n", PIB1);
     printf("Numeros de Pontos Turisticos: %d\n", pturisticos1);
+    printf("Densidade Populacional: %.2f km²\n", dpopulacional1);
+    printf("PIB per capita: %.2f reais\n",PIBpercapita1 );
 
     // Printando carta 2
     printf("\n");                                          // Quebra de linha para separar visualmente o print completo da carta 1.
@@ -102,9 +115,11 @@ int main() {
     printf("Codigo: %c%s\n", estado2, codcarta2);
     printf("Nome da Cidade: %s\n", nomecidade2);
     printf("Populacao: %d\n", populacao2);
-    printf("Area: %.2f km2\n", area2);
+    printf("Area: %.2f km²\n", area2);
     printf("PIB: %.2f Bilhoes de Reais\n", PIB2);
     printf("Numeros de Pontos Turisticos: %d\n", pturisticos2);
+    printf("Densidade Populacional: %.2f km²\n", dpopulacional2);
+    printf("PIB per capita: %.2f reais\n",PIBpercapita2);
     
     printf("\n"); 
     printf("Pressione ENTER para sair...");
@@ -113,6 +128,7 @@ int main() {
 
 }
     /*
+    Nível Novato:
     Apos o usuário inserir os dados de cada carta, seu programa deve exibir na tela as informacões cadastradas, de forma organizada e legível. 
     Para cada carta, imprima cada informação em uma linha separada, com uma descricao clara. Por exemplo:
     Carta 1:
@@ -123,4 +139,27 @@ int main() {
     Area: 1521.11 km²
     PIB: 699.28 bilhoes de reais
     Numero de Pontos Turisticos: 50
+
+    Nível Aventureiro:
+    1 - Calcular a Densidade Populacional: 
+    * Divida a população da cidade pela sua área. 
+    * O resultado será a densidade populacional, que representa o número de habitantes por quilômetro quadrado. 
+    * Armazene esse valor em uma variável do tipo float.
+    
+    2 - Calcular o PIB per Capita: 
+    * Divida o PIB da cidade pela sua população. 
+    * O resultado será o PIB per capita, que indica a riqueza média por pessoa na cidade. 
+    * Armazene esse valor em uma variável do tipo float.
+    
+    3 - Exibir os Resultados: 
+    * Além de exibir as informações lidas do usuário (como no nível básico)
+    * Seu programa também deve exibir a densidade populacional e o PIB per capita calculados para cada cidade. 
+    * Formate os valores de ponto flutuante com duas casas decimais.
+
+    Nível Mestre: 
+    Obs.: população agora deve ser armazenada como unsigned long int para acomodar números maiores.
+    1 - Calcular a Densidade Populacional e o PIB per Capita: Assim como no nível intermediário, calcule e armazene esses valores.
+    2 - Calcular o Super Poder:
+   
+
     */
